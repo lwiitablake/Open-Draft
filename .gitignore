@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+*.zip
+*.opendraft.json
+.DS_Store
+Thumbs.db
+tests/axe.min.js
