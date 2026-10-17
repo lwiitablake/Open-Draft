@@ -1,6 +1,6 @@
 # Open Draft — wiki-first working prototype
 
-**Version 0.2.0 · Released October 17, 2026**  
+**Version 0.2.1 · Released October 17, 2026**  
 **Original app and documentation: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**
 
 See [LICENSE.md](LICENSE.md) for scope and third-party exclusions, [CHANGELOG.md](CHANGELOG.md) for release history, and [How this was built](docs/about.html) for the public development disclosure. User-created/imported content retains its own rights and licenses.
@@ -17,7 +17,7 @@ The application version is separate from project-file schema version 1. When rel
 
 A browser-local authoring workspace for English Wikibooks and Wikimedia Commons. No account, API keys, build step, backend, or automatic publication. The name is provisional; this is not an official Wikimedia tool.
 
-## Wiki translator (new in 0.2.0)
+## Wiki translator (new in 0.2.1)
 
 Choose **Wiki translator** in the sidebar. Type in the rich content editor; wikitext updates beside it. Select text for bold, italic, or a link; choose paragraph/section/subsection/quotation styles, or use lists. Copy the code or download a `.wiki` file, then use the destination wiki's **Edit source** and **Show preview**. Paste into the editor inserts plain text. This is a visual-to-wikitext translator, not a reverse parser or AI writing service.
 
@@ -88,3 +88,12 @@ Run pure tests with Node: `node --test tests/core.test.cjs tests/translator.test
 4. Extend the structured model for tables, equations, multilingual content, and media alternatives.
 5. Add EPUB validation and a tagged PDF pipeline with reading-system and accessibility verification.
 6. Consider larger IndexedDB working copies and explicit authorized wiki publishing. Retain user-controlled downloads and publication review.
+
+
+## License cards and mobile use (0.2.1)
+
+Text and image license pickers show every supported option as a selectable card with a persistent explanation and wiki guidance. All six CC 4.0 licenses, CC0, undecided, and all rights reserved are available for draft metadata. NC/ND options do not become Commons-compatible by selecting them. CC BY-SA remains the supported original Wikibooks text path. Existing project files remain supported; projects saved with the two newly added licenses require this release or later.
+
+Tap anywhere on a card. On a keyboard, Tab enters the radio group and arrow keys select an option. Cards stack on narrow displays, include a visible selection marker, and do not rely on hover. See QA.md for mobile test scope and remaining manual checks.
+
+To update your existing Open-Draft repository, replace its source with this package’s contents, retaining docs/ at repository root. In Settings → Pages choose main → /docs → Save. The deployed address is https://lwiitablake.github.io/Open-Draft/. No new repository or build step is needed.

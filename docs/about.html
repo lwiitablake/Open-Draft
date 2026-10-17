@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="How Open Draft was built, its version, release date, and licensing."><title>How Open Draft was built · v0.2.0</title><link rel="stylesheet" href="styles.css"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="How Open Draft was built, its version, release date, and licensing."><title>How Open Draft was built · v0.2.1</title><link rel="stylesheet" href="styles.css"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"></head>
 <body>
 <a class="skip" href="#about">Skip to build information</a>
-<header class="masthead"><a class="brand" href="./">← Open Draft</a><span class="badge">v0.2.0 · Working prototype</span></header>
+<header class="masthead"><a class="brand" href="./">← Open Draft</a><span class="badge">v0.2.1 · Working prototype</span></header>
 <main class="guide" id="about">
 <p class="eyebrow">BUILD INFORMATION &amp; LICENSING</p>
 <h1>How Open Draft was built</h1>
-<p><strong>Version 0.2.0</strong><br>Released <time datetime="2026-10-17">October 17, 2026</time><br>Status: working prototype; independent of Wikimedia.</p>
+<p><strong>Version 0.2.1</strong><br>Released <time datetime="2026-10-17">October 17, 2026</time><br>Status: working prototype; independent of Wikimedia.</p>
 <h2>Design and development</h2>
 <p>The project owner defined the purpose, wiki-first priorities, accessibility requirements, and open-education guidance. OpenAI Codex assisted with the design, programming, documentation, and automated testing. This is AI-assisted development; it has not received an independent human accessibility audit.</p>
 <p>Two design reviews preceded implementation: one examined contributor workflows and wiki destinations; the other examined accessibility, local storage, privacy, and failure handling. The implementation was then tested and revised. The source package includes DESIGN-REVIEW.md and QA.md so maintainers can inspect those decisions and their limits.</p>
-<h2>New in version 0.2.0</h2><p>The wiki translator adds a visual rich-text editor beside live wiki code, optional paired colors with contrast warnings, and UDL suggestions with explanations and starters. Translator drafts are saved with the project. The editor uses native browser editing commands; cross-browser and screen-reader evaluation is still needed.</p><h2>The technology</h2>
+<h2>New in version 0.2.1</h2><p>The wiki translator adds a visual rich-text editor beside live wiki code, optional paired colors with contrast warnings, and UDL suggestions with explanations and starters. Translator drafts are saved with the project. The editor uses native browser editing commands; cross-browser and screen-reader evaluation is still needed.</p><h2>The technology</h2>
 <ul>
 <li><strong>Interface:</strong> HTML5, CSS, and plain JavaScript. Native controls, explicit labels, keyboard move controls, responsive layouts, and print styles support access and maintenance.</li>
 <li><strong>Content model:</strong> versioned JSON holds pages, structured blocks, citations, media, rights records, and review acknowledgments.</li>
@@ -23,16 +23,16 @@
 <p>The running app does not use an AI model, analytics, remote fonts, or a file-processing service. AI assistance was used during development, not to process visitors’ content. Hosting requests still reach the hosting provider, and external links visit their respective websites.</p>
 <h2>How it was checked</h2>
 <p>The initial prototype passed 21 model/export tests and scripted browser workflows using Node.js, Playwright, and Microsoft Edge. axe-core 4.10.3 reported no violations in the tested screens and reading export; some native-control contrast checks remained incomplete. Desktop/mobile screenshots and a sample print proof were also inspected.</p>
-<p>Version 0.2.0 passed all 28 model/export tests and the extended browser workflow, including translator formatting, color thresholds, starter undo/redo, and saved-project recovery.</p><p>These checks are evidence of testing, not a certification. Full screen-reader, keyboard-task, cross-browser, and actual wiki-sandbox evaluation remain necessary. IMSCC, EPUB, and verified accessible PDF conversion are future work.</p>
+<p>Version 0.2.1 passed all 28 model/export tests and the extended browser workflow, including translator formatting, color thresholds, starter undo/redo, and saved-project recovery.</p><p>These checks are evidence of testing, not a certification. Full screen-reader, keyboard-task, cross-browser, and actual wiki-sandbox evaluation remain necessary. IMSCC, EPUB, and verified accessible PDF conversion are future work.</p>
 <h2>App and documentation license</h2>
 <p>The original app code and documentation are offered under <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>, to the extent the project owner holds copyright in them.</p>
 <p>You may share and adapt that material under the license: provide appropriate credit and a license link, identify changes, use it for noncommercial purposes, and distribute adaptations under the required share-alike terms. Read the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en">full legal terms</a>; this summary does not replace them.</p>
 <p><strong>Your content has its own license.</strong> The app’s license does not automatically apply to projects you create or import. Choose licenses only for rights you control. Wikimedia destinations have separate requirements; an NC license is not a shortcut to publishing content there.</p>
 <p><strong>Third-party code is excluded from this license grant.</strong> Bundled JSZip retains its own license and notices; this distribution uses its MIT option. Read the <a href="vendor/JSZIP-LICENSE.md">JSZip license</a>. The prototype does not claim rights in Wikimedia or Creative Commons names or marks.</p>
 <h2>Attributing this app</h2>
-<p>A suggested credit is: “Open Draft, v0.2.0, October 17, 2026; credited project contributors; CC BY-NC-SA 4.0.” Include the source repository or release URL when available, preserve supplied contributor credits, and describe your changes. No endorsement is implied.</p>
+<p>A suggested credit is: “Open Draft, v0.2.1, October 17, 2026; credited project contributors; CC BY-NC-SA 4.0.” Include the source repository or release URL when available, preserve supplied contributor credits, and describe your changes. No endorsement is implied.</p>
 <p>Creative Commons generally recommends software-specific licenses for software. The project owner explicitly selected CC BY-NC-SA 4.0 for this draft’s original app and documentation. See the <a href="https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software">Creative Commons software guidance</a>.</p>
 <p><a href="./">Return to the workspace</a> · <a href="guide.html">Usage and privacy guide</a></p>
 </main>
-<footer><p>Open Draft v0.2.0 · <time datetime="2026-10-17">October 17, 2026</time></p><p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · Third-party components retain their licenses.</p></footer>
+<footer><p>Open Draft v0.2.1 · <time datetime="2026-10-17">October 17, 2026</time></p><p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · Third-party components retain their licenses.</p></footer>
 </body></html>

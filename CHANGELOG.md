@@ -1,3 +1,9 @@
+# 0.2.1 · October 17, 2026
+
+- Visible, selectable license cards for text and images, with plain-language descriptions and destination guidance.
+- All six CC 4.0 licenses plus CC0, undecided, and all rights reserved.
+- Native keyboard selection, persistent descriptions, touch-sized cards, responsive single-column layout, and forced-colors support.
+
 # Changelog
 
 ## 0.2.0 — 2026-10-17

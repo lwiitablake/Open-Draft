@@ -3,7 +3,7 @@
   'use strict';
   const T=root.WikiTranslator || (typeof require==='function'?require('./translator.js'):null);
   const VERSION = 1, MAX_BYTES = 4 * 1024 * 1024;
-  const BUILD = Object.freeze({name:'Open Draft',version:'0.2.0',releaseDate:'2026-10-17'});
+  const BUILD = Object.freeze({name:'Open Draft',version:'0.2.1',releaseDate:'2026-10-17'});
   const LICENSES = {
     unknown: {label:'Not decided / unknown',url:''},
     reserved: {label:'All rights reserved',url:''},
@@ -11,6 +11,8 @@
     'CC-BY-SA-4.0': {label:'CC BY-SA 4.0',url:'https://creativecommons.org/licenses/by-sa/4.0/'},
     'CC-BY-NC-4.0': {label:'CC BY-NC 4.0',url:'https://creativecommons.org/licenses/by-nc/4.0/'},
     'CC-BY-ND-4.0': {label:'CC BY-ND 4.0',url:'https://creativecommons.org/licenses/by-nd/4.0/'},
+    'CC-BY-NC-SA-4.0': {label:'CC BY-NC-SA 4.0',url:'https://creativecommons.org/licenses/by-nc-sa/4.0/'},
+    'CC-BY-NC-ND-4.0': {label:'CC BY-NC-ND 4.0',url:'https://creativecommons.org/licenses/by-nc-nd/4.0/'},
     CC0: {label:'CC0 1.0 dedication',url:'https://creativecommons.org/publicdomain/zero/1.0/'}
   };
   const TYPES = {paragraph:'Paragraph',h2:'Section heading',h3:'Subsection heading',list:'Bulleted list',quote:'Quotation',image:'Image'};

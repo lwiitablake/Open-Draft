@@ -60,3 +60,12 @@ The machine blocked normal loopback access between the preview server and test b
 Run `node --test tests/core.test.cjs tests/translator.test.cjs` with a current Node release. For browser checks, install Playwright in a development environment and download axe-core 4.10.3 to `tests/axe.min.js` from `https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.3/axe.min.js`. This test-only tool is not deployed. Run `node tests/browser.cjs`. Set `PLAYWRIGHT_MODULE` to an absolute package directory if it is not on the normal module path, and `BROWSER_EXE` to a local Chromium/Edge executable if not using Playwright's browser installation.
 
 The harness writes screenshots, downloaded fixtures, a print proof, and browser-results.json to ignored `test-results/`. Do not upload those sample fixtures to a wiki. The release ZIP excludes them and the test-only axe download.
+
+
+## Version 0.2.1 license cards · October 17, 2026
+
+Two review passes: (1) semantic single-selection controls, persistent explanations, legal-summary and destination distinctions reviewed before editing; (2) implemented markup, input event persistence, responsive styles, and existing export compatibility reviewed before packaging.
+
+Observed: 28 Node regression tests passed. Full Edge browser suite passed (including all five workflow screens at 320, 768, 1440 CSS pixels and translator checks). Focused license-cards.cjs passed: nine visible choices; arrow-key selection; simulated touch on full labels; one checked option; all options saved; new NC-SA choice restored after reload; card targets at least 44 × 44 CSS pixels; no horizontal overflow at 320, 390, 768, 1440 pixels; increased text spacing at 320 pixels; zero axe violations in that view. Forced-colors state was exercised, but assistive-technology announcement quality was not verified.
+
+Mobile tests use Edge viewport/touch emulation, not physical iOS/Android devices. Real-device Safari/Chrome, VoiceOver/TalkBack, desktop screen readers, and comprehensive manual WCAG/ADA/508/EN 301 549 evaluation remain required. These checks are not a legal or accessibility certification. App content-license summaries link to official Creative Commons guidance; licenses remain subject to their full terms and exceptions.
