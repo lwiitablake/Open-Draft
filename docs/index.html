@@ -6,24 +6,27 @@
   <meta name="description" content="A local-first workspace for thoughtful Wikibooks and Wikimedia Commons contributions.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Open Draft · A workspace for wiki contributors</title>
-  <meta name="application-version" content="0.1.0">
-  <meta name="release-date" content="2026-10-16">
+  <meta name="application-version" content="0.2.0">
+  <meta name="release-date" content="2026-10-17">
   <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
   <link rel="stylesheet" href="styles.css">
   <script defer src="vendor/jszip.min.js"></script>
+  <script defer src="translator.js"></script>
   <script defer src="core.js"></script>
+  <script defer src="translator-ui.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
 <a class="skip" href="#workspace">Skip to workspace</a>
 <header class="masthead">
   <a class="brand" href="./" aria-label="Open Draft home"><svg aria-hidden="true" viewBox="0 0 40 40" width="40" height="40"><path d="M5 8h12l3 4 3-4h12v25H23l-3 3-3-3H5z" fill="currentColor"/><path d="M20 13v18M10 15h5M10 21h5M25 15h5M25 21h5" stroke="#fff" stroke-width="2"/></svg><span>Open Draft<span class="brand-sub">A little structure. More shared knowledge.</span></span></a>
-  <div class="header-actions"><span class="badge">v0.1.0 · Prototype</span><button id="download-project" class="primary">Save project to computer</button></div>
+  <div class="header-actions"><span class="badge">v0.2.0 · Prototype</span><button id="download-project" class="primary">Save project to computer</button></div>
 </header>
 <div class="intro" role="region" aria-label="About this workspace"><div><p class="eyebrow">YOUR IDEAS, READY FOR THE COMMONS</p><h1>Make a thoughtful contribution.</h1><p>Write, credit, check, and prepare for a wiki. Your project stays with you.</p></div><div class="local-note"><span aria-hidden="true">↙</span><strong>Local by design</strong><p>Files are processed in this browser.<br>No account. No automatic publishing.</p></div></div>
 <div class="layout">
 <aside class="sidebar" aria-label="Project navigation">
   <p class="eyebrow">YOUR WORKSPACE</p>
+  <button class="translator-nav" data-step="translate">Wiki translator <span aria-hidden="true">↔</span></button>
   <nav aria-label="Workflow"><ol class="steps">
     <li><button data-step="setup" aria-current="step"><span>01</span> Project &amp; purpose</button></li>
     <li><button data-step="write"><span>02</span> Write &amp; organize</button></li>
@@ -36,7 +39,7 @@
 </aside>
 <main id="workspace" tabindex="-1"><div id="notice" role="status" aria-live="polite"></div><div id="error" role="alert"></div><div id="view"></div></main>
 </div>
-<footer><p>Open Draft v0.1.0 · <time datetime="2026-10-16">October 16, 2026</time><br>Independent prototype. Not affiliated with the Wikimedia Foundation.</p><p><a href="about.html">How this was built &amp; licensing</a><br><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">App &amp; documentation: CC BY-NC-SA 4.0</a><br><a href="guide.html">Guide, privacy &amp; limitations</a></p></footer>
+<footer><p>Open Draft v0.2.0 · <time datetime="2026-10-17">October 17, 2026</time><br>Independent prototype. Not affiliated with the Wikimedia Foundation.</p><p><a href="about.html">How this was built &amp; licensing</a><br><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">App &amp; documentation: CC BY-NC-SA 4.0</a><br><a href="guide.html">Guide, privacy &amp; limitations</a></p></footer>
 <dialog id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-description"><h2 id="confirm-title">Replace this project?</h2><p id="confirm-description"></p><div class="actions"><button id="cancel-dialog" autofocus>Cancel</button><button id="accept-dialog" class="danger">Continue</button></div></dialog>
 <noscript><p class="noscript">This editor needs JavaScript to process files locally. Enable JavaScript to use it. <a href="guide.html">Read the guide</a>.</p></noscript>
 </body></html>

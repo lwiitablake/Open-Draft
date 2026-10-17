@@ -1,8 +1,9 @@
 /* Pure project validation and exporters. No network or browser storage. */
 (function (root) {
   'use strict';
+  const T=root.WikiTranslator || (typeof require==='function'?require('./translator.js'):null);
   const VERSION = 1, MAX_BYTES = 4 * 1024 * 1024;
-  const BUILD = Object.freeze({name:'Open Draft',version:'0.1.0',releaseDate:'2026-10-16'});
+  const BUILD = Object.freeze({name:'Open Draft',version:'0.2.0',releaseDate:'2026-10-17'});
   const LICENSES = {
     unknown: {label:'Not decided / unknown',url:''},
     reserved: {label:'All rights reserved',url:''},
@@ -17,7 +18,7 @@
   const h = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const w = s => String(s ?? '').replace(/[&<>\[\]{}|'=#*:;!_~]/g,c=>'&#'+c.charCodeAt(0)+';');
   function safeURL(s) { try { const u=new URL(s); return ['https:','http:'].includes(u.protocol) && !u.username && !u.password ? u.href : ''; } catch { return ''; } }
-  function blank() { return {format:'open-draft',version:VERSION,title:'',author:'',audience:'General readers',scope:'',destination:'wikibooks',license:'unknown',rightsNote:'',pages:[{id:uid(),title:'Introduction',blocks:[]}],sources:[],media:[],checks:{rights:false,content:false,accessibility:false},updated:new Date().toISOString()}; }
+  function blank() { return {format:'open-draft',version:VERSION,translator:T.empty(),title:'',author:'',audience:'General readers',scope:'',destination:'wikibooks',license:'unknown',rightsNote:'',pages:[{id:uid(),title:'Introduction',blocks:[]}],sources:[],media:[],checks:{rights:false,content:false,accessibility:false},updated:new Date().toISOString()}; }
   function sample() { const p=blank(); p.title='Observing the everyday'; p.scope='A short guide to making careful observations and asking useful questions.'; p.pages[0].blocks=[{id:uid(),type:'h2',text:'Start with a question',sourceId:'',mediaId:''},{id:uid(),type:'paragraph',text:'Choose a familiar place. What changes during the day? Write down what you notice before deciding what it means.',sourceId:'',mediaId:''},{id:uid(),type:'list',text:'Describe what you can observe.\nSeparate observations from interpretations.\nRecord the questions you would like to investigate.',sourceId:'',mediaId:''}]; return p; }
   function validate(raw) {
     if (!raw || raw.format!=='open-draft' || raw.version!==VERSION) throw Error('This is not a supported Open Draft project (version 1).');
@@ -27,6 +28,7 @@
     const one=(v,opts)=>{if(!opts.includes(v))throw Error('Project contains an unsupported option.');return v;};
     const ids=new Set(); const id=v=>{str(v,80);if(!/^[a-zA-Z0-9_-]+$/.test(v)||ids.has(v))throw Error('Project contains invalid or duplicate identifiers.');ids.add(v);return v;};
     const p={format:'open-draft',version:VERSION,title:str(raw.title,120),author:str(raw.author,300),audience:str(raw.audience,1000),scope:str(raw.scope),destination:one(raw.destination,['wikibooks','commons','local']),license:one(raw.license,Object.keys(LICENSES)),rightsNote:str(raw.rightsNote),updated:str(raw.updated,100),checks:{rights:false,content:false,accessibility:false}};
+    p.translator=T.validate(raw.translator===undefined?T.empty():raw.translator);
     p.sources=arr(raw.sources,100).map(s=>({id:id(s.id),title:str(s.title,500),author:str(s.author,500),url:str(s.url,2000),note:str(s.note)}));
     p.media=arr(raw.media,20).map(m=>{const item={id:id(m.id),name:str(m.name,120),type:one(m.type,['image/png','image/jpeg','image/webp']),data:str(m.data,3*1024*1024),title:str(m.title,500),author:str(m.author,500),source:str(m.source,2000),license:one(m.license,Object.keys(LICENSES)),alt:str(m.alt,2000),caption:str(m.caption,4000),date:str(m.date,100),changes:str(m.changes,4000),permission:str(m.permission,4000)}; if(!/^[a-zA-Z0-9][a-zA-Z0-9_.-]*\.(png|jpg|jpeg|webp)$/i.test(item.name)||item.name.includes('..'))throw Error('Media filename is unsafe.'); const ext=item.name.split('.').pop().toLowerCase(); if(({png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',webp:'image/webp'})[ext]!==item.type)throw Error('Media extension and type do not match.'); if(!validImage(item.data,item.type))throw Error('Media data is invalid or is not a supported raster image.');return item;});
     if(new Set(p.media.map(m=>m.name.toLowerCase())).size!==p.media.length)throw Error('Duplicate media filenames are not supported.');
@@ -51,6 +53,7 @@
     if(p.destination==='wikibooks'&&p.license!=='CC-BY-SA-4.0')add('Fix','This Wikibooks draft workflow requires CC BY-SA 4.0 for your original text. Review contribution terms and imported rights; selecting a license does not clear third-party material.','setup');
     if(p.destination==='wikibooks')add('Review','Before publishing original text, review Wikibooks’ CC BY-SA and GFDL contribution terms. This draft’s license picker does not accept those terms for you. Imported text has separate compatibility and attribution rules.','setup');
     if(p.destination==='local'&&p.license==='unknown')add('Review','The project license is undecided. Private drafting is still available.','setup');
+    if(p.translator?.useColors&&!T.colorsApplied(p.translator))add('Fix','Translator colors fall below 4.5:1; wiki defaults are exported instead.','translate');
     const titles=new Set();
     if(p.destination!=='commons')for(const pg of p.pages){
       if(!titleOK(pg.title))add('Fix','A page needs a wiki-safe title.','write');

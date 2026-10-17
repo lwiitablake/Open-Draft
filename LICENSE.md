@@ -1,7 +1,7 @@
 # Open Draft — license notice
 
-Version: 0.1.0  
-Release date: October 16, 2026 (2026-10-16)
+Version: 0.2.0  
+Release date: October 17, 2026 (2026-10-17)
 
 The original Open Draft application code and documentation are licensed under **Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC BY-NC-SA 4.0)**, to the extent the project owner holds copyright in that material.
 
@@ -14,7 +14,7 @@ Under those terms, recipients may share and adapt the licensed material with app
 
 Identify Open Draft, preserve supplied contributor credits, link to the source repository or release when available, link to the license, and indicate changes. Suggested credit:
 
-> Open Draft, v0.1.0, October 16, 2026; credited project contributors; CC BY-NC-SA 4.0. [Add the actual source URL when published.] [Describe modifications, if any.]
+> Open Draft, v0.2.0, October 17, 2026; credited project contributors; CC BY-NC-SA 4.0. [Add the actual source URL when published.] [Describe modifications, if any.]
 
 The repository URL has not yet been assigned. Do not invent a source URL or imply endorsement by the project owner, OpenAI, or Wikimedia.
 

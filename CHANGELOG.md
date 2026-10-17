@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 — 2026-10-17
+
+- Added a side-by-side rich content editor and live wikitext translator, copy/download, and keyboard formatting controls.
+- Added paired text/background colors, WCAG relative-luminance contrast calculation, safe export fallback, and contextual usability prompts.
+- Added UDL guidance with rationale, CAST references, and editable goal/example/practice starters.
+- Saved translator drafts in project JSON/session storage and included separate translator source in contribution ZIPs; older projects remain compatible.
+- Increased footer link target spacing after automated accessibility testing.
+- Updated build information and documentation; app/documentation license remains CC BY-NC-SA 4.0.
+
 ## 0.1.0 — 2026-10-16
 
 First numbered working prototype. The earlier unnumbered draft is incorporated into this release.

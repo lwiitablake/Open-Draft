@@ -1,6 +1,16 @@
 # Verification record — Open Draft prototype
 
-Date: October 16, 2026. This records observed checks, not accessibility certification or legal conformance.
+Updated: October 17, 2026, for v0.2.0. This records observed checks, not accessibility certification or legal conformance.
+
+## Version 0.2.0 translator verification
+
+All 28 Node tests passed (21 original checks and 7 translator checks). Added coverage for exact contrast thresholds, safe color fallback, semantic formatting, literal wiki-command escaping, bounded document validation, migration of older projects, and contextual suggestions.
+
+Browser verification additionally covered selection preservation for emphasis and links, undo/redo, unsafe URL rejection, plain-text paste, color warnings, UDL starters, copying through an instrumented clipboard interface, actual .wiki downloads, session recovery, project reopening, keyboard toolbar activation, and translator inclusion in contribution ZIPs with v0.2.0 metadata. Native system-clipboard permissions remain a deployment/browser-specific check.
+
+No automated violations were reported on the populated translator. The full prior browser suite also passed after fixing footer link target spacing. Translator layout fit 320, 768, and 1440 CSS pixels without document-level horizontal overflow; desktop and mobile screenshots were inspected. Screen-reader and actual MediaWiki rendering tests remain outstanding. Browser-native editing uses deprecated execCommand; cross-browser behavior must be verified before production use.
+
+The translator saves a separate scratchpad rather than modifying existing chapter content. Its rich source and colors survive reopening; its output is copied/downloaded or included separately in contribution ZIPs. It is not included in the book reading HTML.
 
 ## Before implementation
 
@@ -47,6 +57,6 @@ The machine blocked normal loopback access between the preview server and test b
 
 ## Reproduce
 
-Run `node --test tests/core.test.cjs` with a current Node release. For browser checks, install Playwright in a development environment and download axe-core 4.10.3 to `tests/axe.min.js` from `https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.3/axe.min.js`. This test-only tool is not deployed. Run `node tests/browser.cjs`. Set `PLAYWRIGHT_MODULE` to an absolute package directory if it is not on the normal module path, and `BROWSER_EXE` to a local Chromium/Edge executable if not using Playwright's browser installation.
+Run `node --test tests/core.test.cjs tests/translator.test.cjs` with a current Node release. For browser checks, install Playwright in a development environment and download axe-core 4.10.3 to `tests/axe.min.js` from `https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.3/axe.min.js`. This test-only tool is not deployed. Run `node tests/browser.cjs`. Set `PLAYWRIGHT_MODULE` to an absolute package directory if it is not on the normal module path, and `BROWSER_EXE` to a local Chromium/Edge executable if not using Playwright's browser installation.
 
 The harness writes screenshots, downloaded fixtures, a print proof, and browser-results.json to ignored `test-results/`. Do not upload those sample fixtures to a wiki. The release ZIP excludes them and the test-only axe download.

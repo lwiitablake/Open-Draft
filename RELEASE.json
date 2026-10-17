@@ -1,0 +1,23 @@
+{
+  "name": "Open Draft",
+  "version": "0.2.0",
+  "releaseDate": "2026-10-17",
+  "projectSchema": 1,
+  "license": "CC-BY-NC-SA-4.0",
+  "thirdPartyLicenseExceptions": [
+    "docs/vendor/JSZIP-LICENSE.md"
+  ],
+  "runtimeFiles": {
+    "docs/.nojekyll": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "docs/about.html": "2f2e7551b932143dd6075b8bc24d842c22da7ddb2b535a3266bdf1c57dd4d07d",
+    "docs/app.js": "3bbdf7531ba31271af8dad50724e0e03dc05db187f9494ecfdc224399dde1867",
+    "docs/core.js": "0844f50e76b612dd7ea1dd4002c537f2651cf7b34cc251149b3f546d5fee9934",
+    "docs/guide.html": "e72d5c47ca66c2a4c29b3d60bb33a921747b67e086a45b43626b52de6dde7061",
+    "docs/index.html": "8514759a7d15b711222bfd391d4377fdad6cad2cb52be6707458cec4780ad188",
+    "docs/styles.css": "72e794a3cb7fa47699eaa32f30fb65fb22bc5432e2c84751bf695abe5ac86db3",
+    "docs/translator-ui.js": "78e71343e1c9ea6dd2a583a9c12c0b37a67a906d5d5223b1f0ee1d6a40ff8208",
+    "docs/translator.js": "39ec6b0dd0d5dbb2b61ceee7efbd32d248fa2e30cfc3a8b768ffa6ba3826d056",
+    "docs/vendor/JSZIP-LICENSE.md": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4",
+    "docs/vendor/jszip.min.js": "acc7e41455a80765b5fd9c7ee1b8078a6d160bbbca455aeae854de65c947d59e"
+  }
+}

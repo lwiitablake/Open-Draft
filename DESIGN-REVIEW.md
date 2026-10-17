@@ -1,5 +1,11 @@
 # Wiki-first draft: two reviews before implementation
 
+## Translator extension pre-implementation reviews — v0.2.0
+
+Review 1, contributor workflow: add a visual rich-text scratchpad beside live wikitext, integrated into project JSON and temporary storage. Support headings, paragraphs, emphasis, lists, quotations, and external links. Copy/download is explicit; wiki rendering remains destination-dependent. Preserve the existing structured book workflow. The translator is separately labeled, not silently merged with book chapters. Include its draft in contribution packages with explanatory instructions.
+
+Review 2, accessibility and trust: store a bounded semantic document rather than arbitrary executable HTML. Paste plain text, sanitize before serialization, escape literal wiki commands, and validate link protocols. Toolbar buttons retain selection, expose names/states, and work by keyboard. Pair foreground/background colors; apply only pairs meeting 4.5:1 using unrounded WCAG relative luminance. Failed pairs retain safe editor colors and export wiki defaults. Warn about actual wiki skins, links, and dark/forced-color rendering. Give UDL suggestions with rationale and CAST sources, without learning-style labels, guaranteed outcomes, or automated conformance scores. Review generated structure, contrast boundary cases, keyboard selection, saved-project round trips, and responsive side-by-side layout after implementation.
+
 Date: 2026-10-16. Working product name: Open Draft. This is an independent tool, not a Wikimedia product.
 
 ## Review 1 — user needs and destination fit
