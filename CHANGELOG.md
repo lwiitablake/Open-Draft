@@ -1,3 +1,10 @@
+# 0.3.0 · October 17, 2026
+
+- Reader becomes the home page; Create & adapt retains authoring and translator.
+- Anonymous English Wikibooks API loading, revision traceability, chapter navigation, source/citation links, license information, and downloadable attribution/source records.
+- Allowlist reconstruction of remote HTML, explicit unsupported-media notices, responsive reflow and reading preferences.
+- Reader request privacy documented separately from local authoring.
+
 # 0.2.1 · October 17, 2026
 
 - Visible, selectable license cards for text and images, with plain-language descriptions and destination guidance.

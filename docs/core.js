@@ -3,7 +3,7 @@
   'use strict';
   const T=root.WikiTranslator || (typeof require==='function'?require('./translator.js'):null);
   const VERSION = 1, MAX_BYTES = 4 * 1024 * 1024;
-  const BUILD = Object.freeze({name:'Open Draft',version:'0.2.1',releaseDate:'2026-10-17'});
+  const BUILD = Object.freeze({name:'Open Draft',version:'0.3.0',releaseDate:'2026-10-17'});
   const LICENSES = {
     unknown: {label:'Not decided / unknown',url:''},
     reserved: {label:'All rights reserved',url:''},

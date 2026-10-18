@@ -6,7 +6,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
  const root=path.resolve(__dirname,'../docs'),out=path.resolve(__dirname,'../test-results');
  await context.route('http://opendraft.test/**',async r=>{const rel=new URL(r.request().url()).pathname.slice(1)||'index.html';const file=path.resolve(root,rel);if(!file.startsWith(root+path.sep)||!fs.existsSync(file))return r.fulfill({status:404});return r.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.js':'application/javascript','.css':'text/css'})[path.extname(file)]||'text/plain'});});
- const page=await context.newPage();await page.goto('http://opendraft.test/');
+ const page=await context.newPage();await page.goto('http://opendraft.test/create.html');
  const group=page.getByRole('group',{name:'License for your original text',exact:true});
  assert.equal(await group.getByRole('radio').count(),9);
  await group.getByRole('radio',{name:'Not decided / unknown',exact:true}).focus();await page.keyboard.press('ArrowRight');

@@ -1,6 +1,20 @@
+# Open Draft 0.3.0 · October 17, 2026
+
+The home page is now **Read & explore**. **Create & adapt** opens the existing editor at `create.html`.
+
+Paste an English Wikibooks book/chapter URL or use the education-book example. Read a reformatted page with text-size and spacing controls, chapter links, revision-specific source links, contributor history, prominent licensing guidance, a reusable source record, and an attribution draft. Citation styles link to Wikibooks rather than guessing academic formatting.
+
+Reader limits: one page per load; English Wikibooks only; no whole-book download or automatic editor import. Images appear as descriptive notes, and unsupported interactive media/math are omitted with a warning. Source styles/scripts are not run. Inspect the original for omitted material and media rights. Reader content accessibility depends partly on the source and is not certified. The reader needs network access to en.wikibooks.org; authoring files remain local. No request is made before a user opens a page.
+
+Upload this package’s contents to the existing Open-Draft repository and keep Pages set to main → /docs. Include both index.html and create.html, reader.js, and all other docs assets. Old project files remain supported; download backups before changing deployments. No account, build step, or API key is required.
+
+The original app and documentation remain CC BY-NC-SA 4.0; displayed third-party book text retains its source license. See QA.md for tested scope.
+
+---
+
 # Open Draft — wiki-first working prototype
 
-**Version 0.2.1 · Released October 17, 2026**  
+**Version 0.3.0 · Released October 17, 2026**  
 **Original app and documentation: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**
 
 See [LICENSE.md](LICENSE.md) for scope and third-party exclusions, [CHANGELOG.md](CHANGELOG.md) for release history, and [How this was built](docs/about.html) for the public development disclosure. User-created/imported content retains its own rights and licenses.
@@ -17,7 +31,7 @@ The application version is separate from project-file schema version 1. When rel
 
 A browser-local authoring workspace for English Wikibooks and Wikimedia Commons. No account, API keys, build step, backend, or automatic publication. The name is provisional; this is not an official Wikimedia tool.
 
-## Wiki translator (new in 0.2.1)
+## Wiki translator (new in 0.3.0)
 
 Choose **Wiki translator** in the sidebar. Type in the rich content editor; wikitext updates beside it. Select text for bold, italic, or a link; choose paragraph/section/subsection/quotation styles, or use lists. Copy the code or download a `.wiki` file, then use the destination wiki's **Edit source** and **Show preview**. Paste into the editor inserts plain text. This is a visual-to-wikitext translator, not a reverse parser or AI writing service.
 
@@ -76,7 +90,7 @@ Project limits: 4 MB, 50 pages, 200 blocks/page, 100 references, 20 images; 1.5 
 
 `docs/core.js`: pure model validation, checks, escaping, wiki and HTML serializers. `docs/app.js`: form rendering, user events, storage, import, and downloads. `docs/styles.css`: responsive, print, and focus styles. `tests/`: regression checks. `DESIGN-REVIEW.md`: two pre-implementation reviews. `PROJECT-REQUIREMENTS.md`: broader product requirements.
 
-The runtime has one vendored dependency: JSZip (see `docs/vendor/JSZIP-LICENSE.md`). No runtime CDN. Retain its license when redistributing. The original app and documentation use CC BY-NC-SA 4.0, as selected by the project owner. JSZip retains its MIT license. The content-license picker controls project metadata, not the application license.
+The runtime has one vendored dependency: JSZip (see `docs/vendor/JSZIP-LICENSE.md`). No runtime CDN. The reader contacts the English Wikibooks API only after an explicit load action. Retain its license when redistributing. The original app and documentation use CC BY-NC-SA 4.0, as selected by the project owner. JSZip retains its MIT license. The content-license picker controls project metadata, not the application license.
 
 Run pure tests with Node: `node --test tests/core.test.cjs tests/translator.test.cjs`. Browser QA scripts require Playwright in your development environment; see QA.md. They are not required to deploy or use the app.
 
@@ -90,7 +104,7 @@ Run pure tests with Node: `node --test tests/core.test.cjs tests/translator.test
 6. Consider larger IndexedDB working copies and explicit authorized wiki publishing. Retain user-controlled downloads and publication review.
 
 
-## License cards and mobile use (0.2.1)
+## License cards and mobile use (0.3.0)
 
 Text and image license pickers show every supported option as a selectable card with a persistent explanation and wiki guidance. All six CC 4.0 licenses, CC0, undecided, and all rights reserved are available for draft metadata. NC/ND options do not become Commons-compatible by selecting them. CC BY-SA remains the supported original Wikibooks text path. Existing project files remain supported; projects saved with the two newly added licenses require this release or later.
 
